@@ -12,6 +12,8 @@ import kafka.consumer.ConsumerConfig;
 import kafka.consumer.KafkaStream;
 import kafka.javaapi.consumer.ConsumerConnector;
 
+import com.test.kafkaTest.util.KafkaUtil;
+
 
 public class ConsumerDemo {
 
@@ -64,7 +66,7 @@ public class ConsumerDemo {
     }
 
     public static void main(String[] arg) {
-        String[] args = { "192.168.158.204:2181", "group-1", "page_visits", "12" };
+        String[] args = { "192.168.158.204:2181", KafkaUtil.GROUP_ID, KafkaUtil.TOPIC, "12" };
         String zooKeeper = args[0];
         String groupId = args[1];
         String topic = args[2];
