@@ -86,18 +86,21 @@ Cluster 在 request 跟 response的时候，是不一样的
 以下是debug的截图:
 
 Request：
+
 ![request code][1]
 
 ![request cluster][2]
 
 
 Response：
+
 ![response code][3]
 
 ![response cluster][4]
 
 
 解决方案是: 在server.properties 中添加以下属性
+
 ```
 advertised.host.name=192.168.158.204
 ```
