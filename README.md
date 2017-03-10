@@ -1,5 +1,7 @@
 # testKafka
-kafka java demo
+
+标签（空格分隔）： kafka java demo
+
 
 ---
 ##code refer:
@@ -86,21 +88,18 @@ Cluster 在 request 跟 response的时候，是不一样的
 以下是debug的截图:
 
 Request：
-
 ![request code][1]
 
 ![request cluster][2]
 
 
 Response：
-
 ![response code][3]
 
 ![response cluster][4]
 
 
 解决方案是: 在server.properties 中添加以下属性
-
 ```
 advertised.host.name=192.168.158.204
 ```
@@ -118,7 +117,23 @@ advertised.host.name=192.168.158.204
 #advertised.port=9092
 ```
 
+---
 
+Consumer 的高级使用
+```
+ConsumerConnector::createMessageStreams(Map<String,Int> topicCountMap)
+```
+入参: topicCountMap
+
+    key: topic 的名字
+    int: 线程数量
+
+该方法: 是读取 KafkaStream.
+
+> 
+每一个 KafkaStream 都代表着： 一个或者多个server中 的 一个或者多个 partition 中的消息
+每一个 KafkaStream 都会被一个 thread 处理。 所以入参的 线程数一般传一个 最优的线程数
+注意： 一个 partition只能 存在于一个 KafkaStream，不能存在于多个KafkaStream
 
 
 
