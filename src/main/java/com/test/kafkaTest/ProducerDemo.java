@@ -1,5 +1,7 @@
 package com.test.kafkaTest;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.Properties;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
@@ -16,6 +18,16 @@ import com.test.kafkaTest.util.KafkaUtil;
 public class ProducerDemo {
 
 	public static void main(String[] args) {
+	    
+	    InetAddress inetAddress;
+        try {
+            inetAddress = InetAddress.getByName("192.168.158.204");
+            String hostName = inetAddress.getCanonicalHostName();
+            System.out.println(hostName);
+        } catch (UnknownHostException e1) {
+//            logger.error("", e);
+        }
+	    
 
         Properties props = new Properties();
         props.put("bootstrap.servers", "192.168.158.204:9092");//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx

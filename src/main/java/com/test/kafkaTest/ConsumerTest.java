@@ -17,7 +17,7 @@ public class ConsumerTest {
         //        Properties props = new Properties();
         Map<String, Object> props = new HashMap<String, Object>();
         props.put("bootstrap.servers", "192.168.158.204:9092");
-        props.put("group.id", KafkaUtil.GROUP_ID);
+        props.put("group.id", KafkaUtil.CONSUMER_GROUP_ID);
         props.put("enable.auto.commit", "true");
         props.put("auto.commit.interval.ms", "1000");
         props.put("session.timeout.ms", "30000");
