@@ -6,8 +6,10 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class SkuUtil {
 
-    public static AtomicInteger SKU_NUM = new AtomicInteger(100);
-    
-    
-    public static Map<String, String> luckUserIdSkuId = new HashMap<String, String>();
+	public static AtomicInteger SKU_NUM = new AtomicInteger(100);
+
+
+	public static Map<String, String> luckUserIdSkuId = new HashMap<String, String>();
+
+	public final static int USER_COUNT = 1000;
 }
